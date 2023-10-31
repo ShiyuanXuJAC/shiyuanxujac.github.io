@@ -6,86 +6,414 @@
     <title>Your Resume</title>
     <!-- Include Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Add custom styles here, if needed */
-    </style>
+    
+    <!--Bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body class="font-sans">
-    <!-- Navigation Bar -->
-    <nav class="bg-gray-800 text-white p-4 fixed top-0 w-full z-10">
-        <div class="container mx-auto flex justify-between">
-            <div>
-                <a href="#home" class="text-2xl font-bold">Home</a>
-            </div>
-            <div>
-                <a href="#about" class="mx-2">About</a>
-                <a href="#portfolio" class="mx-2">Portfolio</a>
-                <a href="#experience" class="mx-2">Experience</a>
-                <a href="#education" class="mx-2">Education</a>
-                <a href="#contact" class="mx-2">Contact Me</a>
-                <a href="/doc/SHIYUAN_XU_CV_FULL_Intern.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Download CV</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="bg-gray-100 py-20">
-        <div class="container mx-auto">
-            <h1 class="text-4xl font-bold">Welcome to My Resume</h1>
-            <!-- Add your home content here -->
+<!-- Navigation Bar -->
+<!-- <nav class="bg-gray-800 text-white p-4 fixed top-0 w-full z-10">
+    <div class="container mx-auto flex justify-between">
+        <div>
+            <a href="#about" class="text-2xl font-bold">Home</a>
         </div>
-    </section>
+        <div class="md:flex space-x-2 hidden">
+            <a href="#about" class="mx-2">About</a>
+            <a href="#skills" class="mx-2">Skills</a>
+            <a href="#experience" class="mx-2">Experience</a>
+            <a href="#portfolio" class="mx-2">Portfolio</a>
+            <a href="#contact" class="mx-2">Contact Me</a>
+            <a href="/doc/SHIYUAN_XU_CV_FULL_Intern.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Download CV</a>
+        </div>
+        <div class="md:hidden flex">
+            <button id="menuBtn" class="text-3xl">
+                &#9776;
+            </button>
+            <div id="menu" class="hidden">
+                <a href="#about" class="block py-2" onclick="toggleMenu()">About</a>
+                <a href="#skills" class="block py-2" onclick="toggleMenu()">Skills</a>
+                <a href="#experience" class="block py-2" onclick="toggleMenu()">Experience</a>
+                <a href="#portfolio" class="block py-2" onclick="toggleMenu()">Portfolio</a>
+                <a href="#contact" class="block py-2" onclick="toggleMenu()">Contact Me</a>
+                <a href="/doc/SHIYUAN_XU_CV_FULL_Intern.pdf" class="block py-2 bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600" onclick="toggleMenu()">Download CV</a>
+            </div>
+        </div>
+    </div>
+</nav> -->
+
+<nav class="bg-gray-800 text-white p-4 fixed top-0 w-full z-10">
+    <div class="container mx-auto flex justify-between items-center">
+        <div>
+            <a href="#about" class="text-2xl font-bold">Home</a>
+        </div>
+        <div class="md:flex space-x-2 hidden">
+            <a href="#about" class="mx-2">About</a>
+            <a href="#skills" class="mx-2">Skills</a>
+            <a href="#experience" class="mx-2">Experience</a>
+            <a href="#portfolio" class="mx-2">Portfolio</a>
+            <a href="#contact" class="mx-2">Contact Me</a>
+            <a href="/doc/SHIYUAN_XU_CV_FULL_Intern.pdf" class="mx-2 text-xs text-white bg-blue-500 rounded-md hover:bg-blue-600 flex items-center">
+                <span class="mx-1">Download CV</span>
+            </a>
+        </div>
+        <div class="md:hidden flex">
+            <button id="menuBtn" class="text-3xl">
+                &#9776;
+            </button>
+            <div id="menu" class="hidden">
+                <a href="#about" class="block py-2" onclick="toggleMenu()">About</a>
+                <a href="#skills" class="block py-2" onclick="toggleMenu()">Skills</a>
+                <a href="#experience" class="block py-2" onclick="toggleMenu()">Experience</a>
+                <a href="#portfolio" class="block py-2" onclick="toggleMenu()">Portfolio</a>
+                <a href="#contact" class="block py-2" onclick="toggleMenu()">Contact Me</a>
+                <a href="/doc/SHIYUAN_XU_CV_FULL_Intern.pdf" class="block py-2 text-xs text-white bg-blue-500 rounded-md hover:bg-blue-600 flex items-center">
+                    <span class="mx-1">Download CV</span>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</nav>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        menuBtn.classList.add('hidden');
+    });
+
+    function toggleMenu() {
+        menu.classList.add('hidden');
+        menuBtn.classList.remove('hidden');
+    }
+    document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+            menu.classList.add('hidden');
+            menuBtn.classList.remove('hidden');
+        }
+    });
+</script>
+
+
+
 
     <!-- About Section -->
-    <section id="about" class="py-16 bg-blue-100">
+    <section id="about" class="py-16 bg-blue-100 px-10">
         <div class="container mx-auto flex flex-col md:flex-row items-center">
-        <!-- Left Column (Title and Summary) -->
-        <div class="md:w-1/2 p-4">
-            <h2 class="text-3xl font-bold mb-4">SHIYUAN XU</h2>
-            <h2 class="text-xl font-bold mb-4">FULL-STACK DEVELOPER</h2>
-            <p class="text-lg">
-                I am an experienced software developer (10+ years) who has been updating my knowledge and skills through a full-stack development program at John Abbott College. I am currently seeking a internship opportunity. I will be available to start working from January 15th, 2024.
-            </p>
-        </div>
+            <!-- Left Column (Title and Summary) -->
+            <div class="md:w-2/3 p-4">
+                <h2 class="text-3xl font-bold mb-4">SHIYUAN XU</h2>
+                <h2 class="text-xl font-bold mb-4">FULL-STACK DEVELOPER</h2>
+                <p class="text-lg">
+                    I am an experienced software developer (10+ years) who has been updating my knowledge and skills through a full-stack development program at John Abbott College. I am currently seeking an internship opportunity. I will be available to start working from January 15th, 2024.
+                </p>
+            </div>
 
-        <!-- Right Column (Image) -->
-        <div class="md:w-1/2 p-4">
-            <img src="./img/微信图片_20231027123655.jpg" alt="Your Image" class="w-full rounded-lg shadow-lg">
-        </div>
+            <!-- Right Column (Image) -->
+            <div class="md:w-1/3 p-4">
+                <img src="./img/Shiyuan.png" alt="Your Image" class="w-full rounded-lg shadow-lg">
+            </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-16">
+    <!-- Skill Section -->
+    <section id="skills" class="py-16 bg-gray-200 px-10">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold">Portfolio</h2>
-            <!-- Add your portfolio content here -->
-        </div>
-    </section>
-    <!-- Experience Section -->
-    <section id="experience" class="py-16">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold">Work Experience</h2>
-            <!-- Add your experience content here -->
+            <h2 class="text-3xl font-bold mb-8 text-gray-500">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Language Card -->
+                <div class="bg-white rounded-lg p-6 shadow-md transition transform hover:scale-105 hover:shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-500 mx-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                        </svg>
+                        
+                        <h3 class="text-xl font-semibold">Languages</h3>
+                    </div>
+                    <ul class="list-disc pl-6"> 
+                        <li class="text-blue-800 mb-2">JavaScript</li>
+                        <li class="text-blue-800 mb-2">Java</li>
+                        <li class="text-blue-800 mb-2">PHP</li>
+                        <li class="text-blue-800 mb-2">C#</li>
+                        <li class="text-blue-800 mb-2">VB</li>
+                        <li class="text-blue-800 mb-2">HTML, CSS</li>
+                    </ul>
+                </div>
+
+                <!-- Framework Card -->
+                <div class="bg-white rounded-lg p-6 shadow-md transition transform hover:scale-105 hover:shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-500 mx-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold">Frameworks</h3>
+                    </div>
+                    <ul class="list-disc pl-6"> 
+                        <li class="text-blue-800 mb-2">React, Node.js, Express.js</li>
+                        <li class="text-blue-800 mb-2">Spring boot</li>
+                        <li class="text-blue-800 mb-2">Laravel</li>
+                        <li class="text-blue-800 mb-2">dot Net</li>
+                        <li class="text-blue-800 mb-2">Bootstrap, Thymeleaf, Tailwind</li>
+                </div>
+
+                <!-- Database Card -->
+                <div class="bg-white rounded-lg p-6 shadow-md transition transform hover:scale-105 hover:shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-500 mx-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold">Databases</h3>
+                    </div>
+                    <ul class="list-disc pl-6"> 
+                        <li class="text-blue-800 mb-2">MongoDB</li>
+                        <li class="text-blue-800 mb-2">MySQL</li>
+                        <li class="text-blue-800 mb-2">MS SQL Server</li>
+                        <li class="text-blue-800 mb-2">PostgreSQL</li>
+                    </ul>
+                </div>
+
+                <!-- Deployment Card -->
+                <div class="bg-white rounded-lg p-6 shadow-md transition transform hover:scale-105 hover:shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-500 mx-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold">Deployment</h3>
+                    </div>
+                    <ul class="list-disc pl-6"> 
+                        <li class="text-blue-800 mb-2">Git and Version Control</li>
+                        <li class="text-blue-800 mb-2">Docker</li>
+                        <li class="text-blue-800 mb-2">AWS</li>
+                        <li class="text-blue-800 mb-2">Azure</li>
+                        <li class="text-blue-800 mb-2">Heroku</li>
+                    </ul>
+                </div>
+
+                <!-- Other Skills Card -->
+                <div class="bg-white rounded-lg p-6 shadow-md transition transform hover:scale-105 hover:shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-500 mx-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold">Other Skills</h3>
+                    </div>
+                    <ul class="list-disc pl-6"> 
+                        <li class="text-blue-800 mb-2">Responsive Web Design</li>
+                        <li class="text-blue-800 mb-2">RESTful API</li>
+                        <li class="text-blue-800 mb-2">Agile Development</li>
+                        <li class="text-blue-800 mb-2">UI/UX Design</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
     
 
-    <!-- Education Section -->
-    <section id="education" class="py-16">
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 px-10">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold">Education</h2>
-            <!-- Add your education content here -->
+            <h2 class="text-3xl font-bold">Experience</h2>
+
+            <!-- Education and Work Experience Grid -->
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Education -->
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Education</h3>
+                    <div class="text-xl font-semibold text-blue-800 mb-2">Full Stack Development Program, AEC</div>
+                    <div class="text-sm text-gray-500 mb-2">John Abbott College</div>
+                    <div class="text-sm text-gray-500 mb-2">Jan 2023- Jan 2024, Montréal, QC, Canada</div>
+
+                    <div class="text-xl font-semibold text-blue-800 mb-2">Master's degree in Software Engineering</div>
+                    <div class="text-sm text-gray-500 mb-2">Shandong University</div>
+                    <div class="text-sm text-gray-500 mb-2">Sep 2010-Jul 2012, Jinan, Shandong, China</div>
+                    
+                </div>
+                
+
+                <!-- Work Experience -->
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Work Experience</h3>
+                    <div class="text-xl font-semibold text-blue-800 mb-2">Software Development Team Leader</div>
+                    <div class="text-sm text-gray-500 mb-2">Luneng Tech, Tianjin</div>
+                    <div class="text-sm text-gray-500 mb-2">2002-2018</div>
+                    <p class="text-gray-700 mb-4">
+                        As the software development team leader and primary programmer, I am responsible for both leading the team and actively participating in development, ensuring successful project delivery.
+                    </p>
+                </div>
+
+                <!-- Add more education and work experience entries as needed -->
+
+            </div>
         </div>
     </section>
+
+
+
+
+
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-white px-10">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-gray-500">Portfolio</h2>
+            <h3 class="text-xl font-bold mb-8 text-gray-400">ACADEMIC PROJECTS</h3>
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
+                <!-- Project Card -PhotoBazaar-->
+                <div class="container mx-auto flex flex-col md:flex-row items-center bg-white rounded-lg p-6 transition-transform hover:bg-gray-100">
+                    <!-- Left: Project Image -->
+                    <div class="md:w-1/3">
+                        <img src="/img/photobazaar.png" alt="Project Photo Bazaar" class="w-full h-auto mb-4 md:mr-4 md:mb-0">
+                    </div>
+
+                    <!-- Right: Project Details -->
+                    <div class="md:w-2/3 mx-10">
+                        <div class="text-xl font-semibold text-blue-800 mb-2">PhotoBazaar</div>
+                        <div class="text-xs text-gray-500 mb-4">Oct 2023, developed with a team of 3</div>
+                        <div class="text-sm text-gray-500 mb-4">Used Technologies: MongoDB, Express.js, React, Node.js, AWS S3 Bucket, Socket.io, Stripe, Tailwind</div>
+                        <p class="text-gray-700 mb-4">
+                            This project focuses on creating an Online artwork Sharing and Trading Platform, a digital marketplace where users can share, manage, and trade their original artworks.
+                        </p>
+                        <!-- Links -->
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/ShiyuanXuXS/PhotoBazaar" class="text-blue-500 hover:underline" target="_blank">GitHub</a>
+                            <a href="https://photobazaar-client-897084de3d92.herokuapp.com" class="text-blue-500 hover:underline" target="_blank">Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card -ShopExpress-->
+                <div class="container mx-auto flex flex-col md:flex-row items-center bg-white rounded-lg p-6 transition-transform hover:bg-gray-100">
+                    <!-- Left: Project Image -->
+                    <div class="md:w-1/3">
+                        <img src="/img/shopexpress.png" alt="Project Shop Express" class="w-full h-auto mb-4 md:mr-4 md:mb-0">
+                    </div>
+
+                    <!-- Right: Project Details -->
+                    <div class="md:w-2/3 mx-10">
+                        <div class="text-xl font-semibold text-blue-800 mb-2">ShopExpress</div>
+                        <div class="text-xs text-gray-500 mb-4">Jun 2023, developed with a team of 3</div>
+                        <div class="text-sm text-gray-500 mb-4">Used Technologies: Node.js, Express.js, MySQL, HTML, Bootstrap, JavaScript, Ajax</div>
+                        <p class="text-gray-700 mb-4">
+                            The project is to create an online shopping platform that serves as a marketplace connecting buyers and sellers. The aim of the website is to provide a user-friendly experience for both buyers and sellers, empowering them to engage in efficient and secure transactions.
+                        </p>
+                        <!-- Links -->
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/ShiyuanXuXS/shopExpress" class="text-blue-500 hover:underline" target="_blank">GitHub</a>
+                            <a href="https://shopexpress-41e4963a4f07.herokuapp.com/" class="text-blue-500 hover:underline" target="_blank">Website</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 class="text-xl font-bold mb-8 text-gray-400 mt-10">Employment PROJECTS</h3>
+            <ul>
+                <li class="bg-white rounded-lg p-6 transition-transform hover:bg-gray-100">
+                    <div class="text-xl font-semibold text-blue-800 mb-2">High-Density 3D Electrical Resistivity Imaging Instrument</div>
+                    <div class="text-xs text-gray-500 mb-4">2007-2018, led a cross-functional team for development and application</div>
+                    <div class="text-sm text-gray-500 mb-4">Used Technologies: VB.net, multi-threading, WinForms, MATLAB, XML, Zigbee, AD conversion circuits, data acquisition</div>
+                    <h5 class="text-xs text-gray-500 mb-4">Description:</h5>
+                    <p class="text-gray-700 mb-4">
+                        Developed a pioneering data acquisition and computation system for underground water exploration in the mining industry. The system revolutionizes the accuracy of exploration projects by employing a unique method that involves high-density data collection and fitting acquired results to a normal distribution function, resulting in high-quality data.
+                    </p>
+                    <h5 class="text-xs text-gray-500 mb-4">Innovations:</h5>
+                    <p class="text-gray-700 mb-4">
+                        Utilized advanced techniques for high-density data acquisition, significantly improving the precision of exploration projects in challenging outdoor environments.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Employed Zigbee self-organizing networks to ensure timely and reliable data transmission, even in remote and demanding field conditions.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Integrated MATLAB's function fitting and graphing capabilities, providing powerful data visualization and analysis tools.
+                    </p>
+                    <h5 class="text-xs text-gray-500 mb-4">Achievements:</h5>
+                    <p class="text-gray-700 mb-4">
+                        Secured a Chinese invention patent for the revolutionary data acquisition and computation system.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Significantly enhanced the accuracy and efficiency of multiple exploration projects in the mining industry, contributing to improved decision-making and resource allocation.
+                    </p>
+                </li>
+
+                <li class="bg-white rounded-lg p-6 transition-transform hover:bg-gray-100">
+                    <div class="text-xl font-semibold text-blue-800 mb-2">Inventory Management System</div>
+                    <div class="text-xs text-gray-500 mb-4">2005, led a team for development</div>
+                    <div class="text-sm text-gray-500 mb-4">Used Technologies: VB.net, ASP.net, Web Forms, Microsoft SQL Server, IIS</div>
+                    <h5 class="text-xs text-gray-500 mb-4">Description:</h5>
+                    <p class="text-gray-700 mb-4">
+                        Developed a comprehensive Inventory Management System designed to streamline and enhance the processes of inventory control, purchasing, and sales for businesses. The system effectively managed the flow of data and analysis related to inventory management, including tracking changes in material stock levels from raw materials to finished products. It was built on a Browser-Server architecture and deployed on clients' internal servers, allowing operators to access and operate the system from web browsers. The system boasted a user-friendly interface and robust table processing capabilities. Notably, I integrated Excel functionality into the system, enabling the generation of complex financial reports.
+                    </p>
+                    <h5 class="text-xs text-gray-500 mb-4">Achievements:</h5>
+                    <p class="text-gray-700 mb-4">
+                        Successfully marketed and sold the Inventory Management System to multiple clients, providing valuable assistance in optimizing their inventory management and business operations.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+
 
     <!-- Contact Section -->
     <section id="contact" class="bg-gray-100 py-16">
         <div class="container mx-auto">
             <h2 class="text-3xl font-bold">Contact Me</h2>
-            <!-- Add your contact content here -->
+
+            <div class="mt-8">
+                <!-- Personal Details and Links -->
+                <div class="rounded-lg p-6 shadow-md">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <div class="text-blue-800 mb-2">
+                                <span class="font-semibold">Full Name :</span> Shiyuan Xu
+                            </div>
+                            <div class="text-blue-800 mb-2">
+                                <span class="font-semibold">Location :</span> Montreal, QC
+                            </div>
+                            <div class="text-blue-800 mb-2">
+                                <i class="bi bi-telephone"></i>
+                                <span class="font-semibold">Phone No :</span> 438-458-1308
+                            </div>
+                            <div class="text-blue-800 mb-2">
+                                <span class="font-semibold">
+                                    <i class="bi bi-envelope"></i> Email :
+                                </span>
+                                <a href="mailto:shiyuan.xu.xs@gmail.com" class="hover:underline text-blue-500">
+                                    shiyuan.xu.xs@gmail.com
+                                </a>
+                            </div>
+                            
+                        </div>
+
+                        <div>
+                            <div class="text-blue-800 mb-2">
+                                <i class="bi bi-github"></i>
+                                <span class="font-semibold">GitHub :</span>
+                                <a href="https://github.com/ShiyuanXuXS" class="hover:underline text-blue-500" target="_blank">https://github.com/ShiyuanXuXS</a>
+                            </div>
+                            <div class="text-blue-800 mb-2">
+                                <i class="bi bi-linkedin"></i>
+                                <span class="font-semibold">LinkedIn :</span>
+                                <a href="https://www.linkedin.com/in/shiyuan-xu-xs/" class="hover:underline text-blue-500" target="_blank">https://www.linkedin.com/in/shiyuan-xu-xs/</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <footer class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto text-center">
+            &copy; 2023 Shiyuan Xu. All rights reserved.
+        </div>
+    </footer>
+    
 </body>
 </html>
