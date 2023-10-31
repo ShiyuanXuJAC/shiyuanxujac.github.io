@@ -12,94 +12,60 @@
 </head>
 <body class="font-sans">
 
-<!-- Navigation Bar -->
-<!-- <nav class="bg-gray-800 text-white p-4 fixed top-0 w-full z-10">
-    <div class="container mx-auto flex justify-between">
-        <div>
-            <a href="#about" class="text-2xl font-bold">Home</a>
-        </div>
-        <div class="md:flex space-x-2 hidden">
-            <a href="#about" class="mx-2">About</a>
-            <a href="#skills" class="mx-2">Skills</a>
-            <a href="#experience" class="mx-2">Experience</a>
-            <a href="#portfolio" class="mx-2">Portfolio</a>
-            <a href="#contact" class="mx-2">Contact Me</a>
-            <a href="/doc/SHIYUAN_XU_CV_FULL_Intern.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Download CV</a>
-        </div>
-        <div class="md:hidden flex">
-            <button id="menuBtn" class="text-3xl">
-                &#9776;
-            </button>
-            <div id="menu" class="hidden">
-                <a href="#about" class="block py-2" onclick="toggleMenu()">About</a>
-                <a href="#skills" class="block py-2" onclick="toggleMenu()">Skills</a>
-                <a href="#experience" class="block py-2" onclick="toggleMenu()">Experience</a>
-                <a href="#portfolio" class="block py-2" onclick="toggleMenu()">Portfolio</a>
-                <a href="#contact" class="block py-2" onclick="toggleMenu()">Contact Me</a>
-                <a href="/doc/SHIYUAN_XU_CV_FULL_Intern.pdf" class="block py-2 bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600" onclick="toggleMenu()">Download CV</a>
+    <nav class="bg-gray-800 text-white p-4 fixed top-0 w-full z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <a href="#about" class="text-2xl font-bold">Home</a>
             </div>
-        </div>
-    </div>
-</nav> -->
-
-<nav class="bg-gray-800 text-white p-4 fixed top-0 w-full z-10">
-    <div class="container mx-auto flex justify-between items-center">
-        <div>
-            <a href="#about" class="text-2xl font-bold">Home</a>
-        </div>
-        <div class="md:flex space-x-2 hidden">
-            <a href="#about" class="mx-2">About</a>
-            <a href="#skills" class="mx-2">Skills</a>
-            <a href="#experience" class="mx-2">Experience</a>
-            <a href="#portfolio" class="mx-2">Portfolio</a>
-            <a href="#contact" class="mx-2">Contact Me</a>
-            <a href="/doc/SHIYUAN_XU_CV_FULL_Intern.pdf" class="mx-2 text-xs text-white bg-blue-500 rounded-md hover:bg-blue-600 flex items-center">
-                <span class="mx-1">Download CV</span>
-            </a>
-        </div>
-        <div class="md:hidden flex">
-            <button id="menuBtn" class="text-3xl">
-                &#9776;
-            </button>
-            <div id="menu" class="hidden">
-                <a href="#about" class="block py-2" onclick="toggleMenu()">About</a>
-                <a href="#skills" class="block py-2" onclick="toggleMenu()">Skills</a>
-                <a href="#experience" class="block py-2" onclick="toggleMenu()">Experience</a>
-                <a href="#portfolio" class="block py-2" onclick="toggleMenu()">Portfolio</a>
-                <a href="#contact" class="block py-2" onclick="toggleMenu()">Contact Me</a>
-                <a href="/doc/SHIYUAN_XU_CV_FULL_Intern.pdf" class="block py-2 text-xs text-white bg-blue-500 rounded-md hover:bg-blue-600 flex items-center">
+            <div class="md:flex space-x-2 hidden">
+                <a href="#about" class="mx-2">About</a>
+                <a href="#skills" class="mx-2">Skills</a>
+                <a href="#experience" class="mx-2">Experience</a>
+                <a href="#portfolio" class="mx-2">Portfolio</a>
+                <a href="#contact" class="mx-2">Contact Me</a>
+                <a href="/doc/SHIYUAN_XU_CV_FULL_Intern.pdf" class="mx-2 text-xs text-white bg-blue-500 rounded-md hover:bg-blue-600 flex items-center">
                     <span class="mx-1">Download CV</span>
                 </a>
             </div>
+            <div class="md:hidden flex">
+                <button id="menuBtn" class="text-3xl">
+                    &#9776;
+                </button>
+                <div id="menu" class="hidden">
+                    <a href="#about" class="block py-2" onclick="toggleMenu()">About</a>
+                    <a href="#skills" class="block py-2" onclick="toggleMenu()">Skills</a>
+                    <a href="#experience" class="block py-2" onclick="toggleMenu()">Experience</a>
+                    <a href="#portfolio" class="block py-2" onclick="toggleMenu()">Portfolio</a>
+                    <a href="#contact" class="block py-2" onclick="toggleMenu()">Contact Me</a>
+                    <a href="/doc/SHIYUAN_XU_CV_FULL_Intern.pdf" class="block py-2 text-xs text-white bg-blue-500 rounded-md hover:bg-blue-600 flex items-center">
+                        <span class="mx-1">Download CV</span>
+                    </a>
+                </div>
+            </div>
+            
         </div>
-        
-    </div>
-</nav>
+    </nav>
 
-<script>
-    const menuBtn = document.getElementById('menuBtn');
-    const menu = document.getElementById('menu');
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const menu = document.getElementById('menu');
 
-    menuBtn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-        menuBtn.classList.add('hidden');
-    });
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menuBtn.classList.add('hidden');
+        });
 
-    function toggleMenu() {
-        menu.classList.add('hidden');
-        menuBtn.classList.remove('hidden');
-    }
-    document.addEventListener('click', (e) => {
-        if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+        function toggleMenu() {
             menu.classList.add('hidden');
             menuBtn.classList.remove('hidden');
         }
-    });
-</script>
-
-
-
-
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menu.classList.add('hidden');
+                menuBtn.classList.remove('hidden');
+            }
+        });
+    </script>
     <!-- About Section -->
     <section id="about" class="py-16 bg-blue-100 px-10">
         <div class="container mx-auto flex flex-col md:flex-row items-center">
@@ -214,9 +180,9 @@
     
 
     <!-- Experience Section -->
-    <section id="experience" class="py-16 px-10">
+    <section id="experience" class="py-16 bg-gray-200 px-10">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold">Experience</h2>
+            <h2 class="text-3xl font-bold mb-8 text-gray-500">Experience</h2>
 
             <!-- Education and Work Experience Grid -->
             <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -361,9 +327,9 @@
 
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-gray-100 py-16">
+    <section id="contact" class="py-16 bg-blue-100 px-10">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold">Contact Me</h2>
+            <h2 class="text-3xl font-bold mb-8 text-gray-500">Contact Me</h2>
 
             <div class="mt-8">
                 <!-- Personal Details and Links -->
@@ -371,9 +337,11 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <div class="text-blue-800 mb-2">
+                                <i class="bi bi-person"></i>
                                 <span class="font-semibold">Full Name :</span> Shiyuan Xu
                             </div>
                             <div class="text-blue-800 mb-2">
+                                <i class="bi bi-geo"></i>
                                 <span class="font-semibold">Location :</span> Montreal, QC
                             </div>
                             <div class="text-blue-800 mb-2">
